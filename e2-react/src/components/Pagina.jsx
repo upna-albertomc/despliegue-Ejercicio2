@@ -22,8 +22,12 @@ function Pagina() {
     return (
         <>
             <h1>hello world</h1>
-            <InputNumero modN1={modN1}/>
+            <InputNumero mod={modN1} label="Primer numero: "/>
+            <InputNumero mod={modN2} label="Segundo numero: "/>
+
             <div>{n1}</div>
+            <div>{n2}</div>
+
         </>
     )
 
