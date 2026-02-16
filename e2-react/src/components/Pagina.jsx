@@ -1,5 +1,6 @@
 import InputNumero from "./InputNumero";
 import {useState} from "react";
+import Operacion from "./Operacion";
 
 
 function Pagina() {
@@ -21,12 +22,14 @@ function Pagina() {
 
     return (
         <>
-            <h1>hello world</h1>
+            <h1>Calculadora</h1>
             <InputNumero mod={modN1} label="Primer numero: "/>
             <InputNumero mod={modN2} label="Segundo numero: "/>
 
-            <div>{n1}</div>
-            <div>{n2}</div>
+            <Operacion n1={n1} n2={n2} modR={modR}/>
+
+
+            <div>{r}</div>
 
         </>
     )

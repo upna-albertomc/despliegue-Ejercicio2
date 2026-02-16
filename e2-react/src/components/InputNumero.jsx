@@ -10,8 +10,8 @@ function InputNumero(props){
     }
 
     const numeroHandler = (event) =>{
-        if (validacion(event.target.value.toString())){
-            props.mod(event.target.value)
+        if (validacion(event.target.value)){
+            props.mod(Number(event.target.value))
         }
         else{
             props.mod(-1)
