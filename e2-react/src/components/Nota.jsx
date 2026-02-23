@@ -1,6 +1,6 @@
 function Nota(props){
 
-    let contenido = <div>ninguna operacion seleccionada</div>
+    let contenido
 
     if(props.operacion=="suma"){
         contenido = <div>suma seleccionada</div>
@@ -14,9 +14,11 @@ function Nota(props){
     else if(props.operacion=="division"){
         contenido = <div>division seleccionada</div>
     }
+    else if(props.operacion=="invalido"){
+        contenido = <div>Operacion invalida</div>
+    }
     else{
-        let contenido = <div>ninguna operacion seleccionada</div>
-     
+        contenido = <div></div>
     }
 
     return(

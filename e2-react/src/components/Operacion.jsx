@@ -5,21 +5,51 @@ import {useState} from "react";
 function Operacion(props){
 
     const [operacion, setOperacion]=useState("")
+    const [validez, setValidez]=useState("")
 
     const sumaHandler = () => {
-        props.modR(props.n1+props.n2)
+        if (props.n1=="" || props.n2 == ""){
+            props.modR(NaN)
+            setValidez("invalido")
+        }
+        else{
+            props.modR(Number(props.n1)+Number(props.n2))
+            setValidez("")
+        }
         setOperacion("suma")
+        
     }
     const restaHandler = () => {
-        props.modR(props.n1-props.n2)
+        if (props.n1=="" || props.n2 == ""){
+            props.modR(NaN)
+            setValidez("invalido")
+        }
+        else{
+            props.modR(Number(props.n1)-Number(props.n2))
+            setValidez("")
+        }
         setOperacion("resta")
     }
     const multiplicacionHandler = () => {
-        props.modR(props.n1*props.n2)
+        if (props.n1=="" || props.n2 == ""){
+            props.modR(NaN)
+            setValidez("invalido")
+        }
+        else{
+            props.modR(Number(props.n1)*Number(props.n2))
+            setValidez("")
+        }
         setOperacion("multiplicacion")
     }
     const divisionHandler = () => {
-        props.modR(props.n1/props.n2)
+        if (props.n1=="" || props.n2 == "" || props.n2=="0"){
+            props.modR(NaN)
+            setValidez("invalido")
+        }
+        else{
+            props.modR(Number(props.n1)/Number(props.n2))
+            setValidez("")
+        }
         setOperacion("division")
     }
 
@@ -33,6 +63,7 @@ function Operacion(props){
             </div>
             <div>
                 <Nota operacion={operacion} />
+                <Nota operacion={validez} />
             </div>
         </>
     )
